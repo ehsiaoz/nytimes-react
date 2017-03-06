@@ -83,6 +83,22 @@ app.post("/api", function(req, res) {
 });
 
 
+app.delete("/api", function(req, res) {
+
+   
+   var id = req.query._id;
+   console.log("this is req.query._id", id);
+
+  Article.remove({ _id: id }, function(err) {
+        if (!err) {
+                console.log("Article deleted!");
+        }
+        else {
+                console.loge(err);
+        }
+    });
+});
+
 
 
 // -------------------------------------------------

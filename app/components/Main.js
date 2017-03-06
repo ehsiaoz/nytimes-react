@@ -89,7 +89,7 @@ var Main = React.createClass({
         </div>
 
         <div className="row">
-          <Saved savedArticles={this.state.savedArticles} />
+          <Saved savedArticles={this.state.savedArticles} setSavedArticles={this.setSavedArticles}/>
         </div>  
       </div>
     );

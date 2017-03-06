@@ -3,7 +3,6 @@ var React = require("react");
 
 // Helper for making AJAX requests to our API
 var helpers = require("../utils/helpers");
-var Promise = require("bluebird");
 
 // Creating the Results component
 var Results = React.createClass({
@@ -14,7 +13,7 @@ var Results = React.createClass({
      };
   },
 
- // When a user submits...
+ // When a user clicks on 'Save'...
   handleClick: function(article) {
    
    console.log("Save pressed!", article);
@@ -26,9 +25,9 @@ var Results = React.createClass({
    helpers.postSaved(headline, url, snippet, date)
       .then(function(data, err){
         if (err) {
-          console.log("error in helpers.postSaved")
+          console.log("error in helpers.postSaved");
         }
-        console.log("this is the data in console.log in the handClick: ", data)
+        console.log("this is the data in console.log in the handClick: ", data);
 
          helpers.getSaved().then(function(response) {
             console.log(response);

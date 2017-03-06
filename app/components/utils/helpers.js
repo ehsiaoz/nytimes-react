@@ -50,7 +50,24 @@ var helper = {
           return results._id;
         }
     });
+  },
+
+  deleteArticle: function(id) {
+    
+    console.log("id inside deleteArtilce helper.js: ", id);
+    return axios.delete("/api", {
+      params: {_id: id}
+    }) .then(function(results, err){
+        if (err) {
+          console.log("Error in helpers.js: ", err);
+        } 
+        else {
+          console.log("Deleted from Mongo");
+          return result;
+        }
+    });  
   }
+
 };
 
 // We export the API helper
